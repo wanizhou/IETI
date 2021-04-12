@@ -1,6 +1,7 @@
 # App_Emerging_Topic
 
 ## 1.Model
+This model emplyed to identify emerging topics in reviews from different app versions.
 <p align="center"><img width="50%" src="Framework.png" /></p>
 
 ## 2.The data set
