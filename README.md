@@ -14,4 +14,4 @@ App reviews should be entered in the following format. The attributes are separa
 rating******review text******title******date******version******nation
 ```
 ## 4. Environment setup
-The operating system: mac os. 
+The operating system: mac os. If you need to transplant to Linux, you need to override the file line feed command in 1.Processing.py.
