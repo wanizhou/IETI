@@ -13,3 +13,5 @@ App reviews should be entered in the following format. The attributes are separa
 ```
 rating******review text******title******date******version******nation
 ```
+## 4. Environment setup
+The operating system: mac os. 
