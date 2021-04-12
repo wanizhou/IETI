@@ -97,7 +97,7 @@ def build_input(app_files):
 
 def extract_phrases(app_files, bigram_min, trigram_min):
     rst = build_input(app_files)
-    gen = list(itertools.chain.from_iterable(rst))  # 列表平滑处理
+    gen = list(itertools.chain.from_iterable(rst)) 
 
     bigram = Phrases(gen, threshold=6, min_count=bigram_min)
     trigram = Phrases(bigram[gen], threshold=4, min_count=trigram_min)
