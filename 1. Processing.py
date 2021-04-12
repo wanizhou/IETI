@@ -42,7 +42,7 @@ def extractSentenceWords(doc, remove_url=True, remove_punc="utf-8", min_length=1
         re_url = r"(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
         doc = re.sub(re_url, "", doc)
 
-    sentences = re.split(r"\s*[;:`\"()?!{}]\s*|--+|\s*-\s+|''|\.\s|\.$|\.\.+|锟斤拷|锟斤拷", doc)  # 分句
+    sentences = re.split(r"\s*[;:`\"()?!{}]\s*|--+|\s*-\s+|''|\.\s|\.$|\.\.+|锟斤拷|锟斤拷", doc)  
 
     wc = 0
     wordsInSentences = []
@@ -154,7 +154,7 @@ def extract_review():
                 list_text[index] = pycorrector.en_correct(value)
         review = list(build_phrase(review_p))
         review = [list(replace_digit(s)) for s in review]
-        rate = float(terms[0]) if re.match(r'\d*\.?\d+', terms[0]) else 2.0  # 若评论星级缺失，则用平均评论星级2代替
+        rate = float(terms[0]) if re.match(r'\d*\.?\d+', terms[0]) else 2.0  
         timed_reviews[app].append({"review": review, "date": date, "rate": rate, "version": version})
         num_docs += 1
         num_words += wc
@@ -187,15 +187,15 @@ def obtm_input():
                 input.append(version_dict[ver][0])
                 rate.append(version_dict[ver][1])
         dict_input = list(itertools.chain.from_iterable(list(itertools.chain.from_iterable(input))))
-        dictionary = corpora.Dictionary(dict_input)  # 语料库
-        dictionary.filter_tokens(map(dictionary.token2id.get, stoplist))  # 去除字典中的停止词
-        dictionary.compactify()  # 更新id
-        dictionary.filter_extremes(no_below=2, keep_n=None)  # 去低频词
-        dictionary.compactify()  # 更新id
+        dictionary = corpora.Dictionary(dict_input)  
+        dictionary.filter_tokens(map(dictionary.token2id.get, stoplist))  
+        dictionary.compactify()  
+        dictionary.filter_extremes(no_below=2, keep_n=None)  
+        dictionary.compactify()  
 
         input_X = []
         for t_i, text_period in enumerate(input):
-            # construct sparse matrix  构造稀疏矩阵
+            # construct sparse matrix  
             text_period = list(itertools.chain.from_iterable(text_period))
             row = []
             col = []
