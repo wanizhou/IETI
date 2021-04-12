@@ -88,7 +88,7 @@ Returns IDs of all relevant phrases that meet the conditions under different tim
 
 
 def get_candidate_label_ids(dic, labels, rawinput):
-    all_label_ids = list(map(dic.token2id.get, labels))  # 所有符合条件的相关短语对应的ID
+    all_label_ids = list(map(dic.token2id.get, labels))  
     label_ids = []
 
     for rawinput_i in rawinput:
@@ -466,7 +466,7 @@ for apk, item in OBTM_input.items():
                                                                    total_count[t_i],  # The total frequency of all reviews at a given time
                                                                    total_count[t_i - 1],
                                                                    label_ids[t_i],  # The id of the relevant phrase that matches the condition at a given time
-                                                                   sent_ids[t_i],  # 某一时间片下,符合条件的句子的id
+                                                                   sent_ids[t_i],  # The id of the sentence that matches the condition at a given time
                                                                    sensi_label[t_i],  # The id of the sentence that matches the condition at a given time
                                                                    sensi_sent[t_i],  # The score of the relevant sentences at a given time
                                                                    jsds, theta, mu, lam)
