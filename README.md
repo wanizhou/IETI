@@ -1,4 +1,4 @@
-# App Review Emerging Topic Identification Based on Adaptive Online BTM
+# App Review Emerging Topic Identification Based on AOBTM
 
 ## 1. Model
 This model emplyed to identify emerging topics in reviews from different app versions. The inputs to this model are user reviews for different app versions and changelogs for app versions. The output is the emerging topics identified (interpreted with related phrases and sentences, respectively) and the evaluation score of the model. The overall flow of the model is shown in the figure below.
